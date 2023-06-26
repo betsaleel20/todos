@@ -1,5 +1,6 @@
 <?php
 
+    require_once ("Task.php");
     class Delete_task{
 
         public function __construct(){
@@ -7,7 +8,7 @@
         }
         
         /**
-         * This function delete the for the user. But, for us, it still exist in DB
+         * This function delete the for task the user. But, for us, it still exist in DB
          * @param Task $task
          * @return Task
          */

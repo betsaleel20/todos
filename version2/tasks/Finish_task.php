@@ -67,7 +67,8 @@
         }
     }
 
-    $empty_task = new Task('',2);
+$empty_task = new Task('',2);
+    Task::createTask();
     $storer = new Store_task();
     $finish = new Finish_task();
 

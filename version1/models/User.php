@@ -38,7 +38,7 @@ class User extends Connexion
     /**
      * Getters
      */
-    public function get_id(): string { return $this->_first_name;}
+    public function get_id(): string { return $this->_id;}
     public function get_first_name(): string { return $this->_first_name;}
     public function get_last_name(): string { return $this->_last_name;}
     public function get_email(): string { return $this->_email;}
@@ -200,12 +200,6 @@ $user2 = $user->create_user('abc', 'def', 'ghi@gmail.com', 'pwdjkm', 789);
 $stored_users = $user->store_user_in_memory($user);
 $stored_users = $user->store_user_in_memory($user1);
 $stored_users = $user->store_user_in_memory($user2);
-echo(" Premier user </br>");
-$user->display_user();
-echo("</br></br> Deuxieme user >");
-$user1->display_user();
-echo("</br></br> Troisiem user >");
-$user2->display_user();
 
 $total = count($stored_users);
 echo("</br></br>---- List of Stored users($total) ----</br>");
