@@ -23,25 +23,35 @@
             self::$_tabUsers[] = $user;
         }
 
-        public function storeUserInMemory(User $user) : array {
-
+        public function storeUserInMemory(User $user) : void {
             $this->setTabUsers($user);
-            return $this->getTabUsers();
         }
     }
 
-/**
- * Tests du code
- */
-//$user = new User('jude', 'scribe');
+
 $storer = new StoreUser();
-$user = User::createUser('Albert', 'betsaleel', 'betsa@gmail.com', 1589632,'crina@2023' );
-$user1 = User::createUser('Jude', 'prenom', 'ju@gmail.com', 456, 'crina@2023' );
+$user = User::createUser(
+    'Albert',
+    'betsaleel',
+    'betsa@gmail.com',
+    1589632,
+    'crina@2023'
+);
+
+$user1 = User::createUser(
+    'Jude',
+    'prenom',
+    'ju@gmail.com',
+    456,
+    'crina@2023'
+);
+
 $user2 = User::createUser('abc', 'def', 'ghi@gmail.com', 789,'crina@2023' );
 
-$storedUsers = $storer->storeUserInMemory($user);
-$storedUsers = $storer->storeUserInMemory($user1);
-$storedUsers = $storer->storeUserInMemory($user2);
+$storer->storeUserInMemory($user);
+$storer->storeUserInMemory($user1);
+$storer->storeUserInMemory($user2);
+$storedUsers = $storer->getTabUsers();
 
 $total = count($storedUsers);
 echo("</br></br>---- List of Stored users($total) ----</br>");

@@ -16,9 +16,9 @@
 
             if(!empty($users)){
 
-                $foundUser = array_filter(
+                $foundUser = array_values(array_filter(
                     $users,
-                    fn(User $oneUser)=>$oneUser->getEmail() === $email && $oneUser->getPassword() === $password );
+                    fn(User $oneUser)=>$oneUser->getEmail() === $email && $oneUser->getPassword() === $password ));
 
                 if(!empty($foundUser)){
                     $foundUser[0]->setIsLogged(true);
